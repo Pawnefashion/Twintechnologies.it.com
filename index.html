@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twin AB Technologies — Zero to AI & Freelance Hero</title>
+<meta name="description" content="A 3-week live online cohort: AI mastery, automation, no-code app building, and freelancing — taught by Abubakar Aliyu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy-deep: #0c0a14;
+  --navy: #171325;
+  --navy-light: #241f38;
+  --cyan: #52d0ff;
+  --gold: #ff66c4;
+  --indigo: #4856c1;
+  --purple: #725dcd;
+  --cream: #f7f4ee;
+  --ink: #0f172a;
+  --slate: #64748b;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--cream); overflow-x: hidden; }
+h1, h2, h3 { font-family: var(--font-display); }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* ===== NAV ===== */
+nav { position: sticky; top: 0; z-index: 100; background: rgba(5,11,24,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { display: flex; align-items: center; gap: 10px; }
+.nav-brand-icon { width: 34px; height: 34px; flex-shrink: 0; }
+.nav-brand-text { color: white; font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: 0.3px; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { color: #cbd5e1; font-size: 14px; font-weight: 500; }
+.nav-links a:hover { color: var(--cyan); }
+.nav-cta { background: linear-gradient(120deg, var(--purple), var(--gold)); color: white !important; padding: 9px 18px; border-radius: 8px; font-weight: 700; font-size: 13.5px; }
+.nav-mobile-toggle { display: none; }
+@media (max-width: 780px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-cta { padding: 8px 14px; font-size: 12.5px; }
+}
+
+/* ===== HERO ===== */
+.hero { background: radial-gradient(circle at 15% 15%, rgba(114,93,205,0.28), transparent 55%), radial-gradient(circle at 85% 85%, rgba(255,102,196,0.16), transparent 50%), linear-gradient(165deg, var(--navy) 0%, var(--navy-deep) 100%); color: white; padding: 76px 0 90px; position: relative; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 44px; } }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,102,196,0.14); border: 1px solid rgba(255,102,196,0.4); color: var(--gold); padding: 6px 14px; border-radius: 20px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 22px; }
+.hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+.hero h1 { font-size: 46px; line-height: 1.12; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.5px; }
+.hero h1 span { color: var(--cyan); }
+@media (max-width: 560px) { .hero h1 { font-size: 34px; } }
+.hero-sub { font-size: 17px; color: #94a3b8; line-height: 1.6; margin-bottom: 32px; max-width: 480px; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+.btn-primary { background: linear-gradient(120deg, var(--indigo), var(--purple) 55%, var(--gold)); color: white; padding: 15px 28px; border-radius: 10px; font-weight: 700; font-size: 15px; box-shadow: 0 8px 24px rgba(114,93,205,0.35); border: none; cursor: pointer; }
+.btn-secondary { background: transparent; color: white; padding: 15px 28px; border-radius: 10px; font-weight: 600; font-size: 15px; border: 1.5px solid rgba(255,255,255,0.25); }
+.btn-secondary:hover { border-color: var(--cyan); }
+.hero-trust { display: flex; gap: 26px; flex-wrap: wrap; }
+.hero-trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #94a3b8; }
+.hero-trust-item svg { flex-shrink: 0; }
+
+/* Terminal signature element */
+.terminal { background: #0d1520; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 30px 60px rgba(0,0,0,0.45); overflow: hidden; }
+.terminal-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; background: #111d2e; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+.terminal-bar span:nth-child(1) { background: #ef4444; }
+.terminal-bar span:nth-child(2) { background: #ff66c4; }
+.terminal-bar span:nth-child(3) { background: #10b981; }
+.terminal-label { margin-left: 8px; font-family: var(--font-mono); font-size: 11.5px; color: #64748b; }
+.terminal-body { padding: 22px; font-family: var(--font-mono); font-size: 13.5px; min-height: 210px; }
+.terminal-prompt-line { color: #94a3b8; }
+.terminal-prompt-line .arrow { color: var(--cyan); }
+.terminal-typed { color: #e2e8f0; }
+.terminal-cursor { display: inline-block; width: 7px; height: 15px; background: var(--cyan); margin-left: 2px; animation: blink 0.9s steps(1) infinite; vertical-align: middle; }
+@keyframes blink { 50% { opacity: 0; } }
+.terminal-output { margin-top: 18px; opacity: 0; transition: opacity 0.6s ease; }
+.terminal-output.show { opacity: 1; }
+.mock-browser { background: white; border-radius: 8px; overflow: hidden; border: 1px solid #1e293b; }
+.mock-browser-bar { background: #1e293b; padding: 6px 10px; display: flex; gap: 5px; }
+.mock-browser-bar span { width: 7px; height: 7px; border-radius: 50%; background: #475569; }
+.mock-browser-content { padding: 16px; }
+.mock-browser-content .mb-title { font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--navy); margin-bottom: 6px; }
+.mock-browser-content .mb-sub { font-size: 10.5px; color: var(--slate); margin-bottom: 10px; }
+.mock-browser-content .mb-btn { display: inline-block; background: var(--gold); color: var(--navy-deep); font-size: 10px; font-weight: 700; padding: 5px 12px; border-radius: 5px; }
+.terminal-caption { text-align: center; font-size: 11.5px; color: #64748b; margin-top: 14px; font-family: var(--font-mono); }
+
+/* ===== SECTION SHARED ===== */
+section { padding: 80px 0; }
+.section-eyebrow { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.section-title { font-size: 32px; font-weight: 700; color: var(--ink); margin-bottom: 16px; letter-spacing: -0.3px; }
+.section-lead { font-size: 16px; color: var(--slate); max-width: 600px; line-height: 1.6; }
+
+/* ===== ABOUT ===== */
+.about { background: white; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 40px; }
+@media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
+.about-body p { font-size: 15.5px; line-height: 1.75; color: #334155; margin-bottom: 16px; }
+.about-body strong { color: var(--navy); }
+.who-list { display: flex; flex-direction: column; gap: 14px; }
+.who-item { display: flex; gap: 12px; align-items: flex-start; background: var(--cream); border-radius: 10px; padding: 14px 16px; border-left: 3px solid var(--cyan); }
+.who-item .who-check { color: var(--cyan); font-weight: 700; flex-shrink: 0; }
+.who-item span.txt { font-size: 14px; color: var(--ink); line-height: 1.5; }
+
+/* ===== INSTRUCTOR ===== */
+.instructor-strip { background: var(--navy); color: white; }
+.instructor-card { display: flex; gap: 22px; align-items: center; background: var(--navy-light); border-radius: 14px; padding: 24px; border: 1px solid rgba(255,255,255,0.08); margin-top: 30px; }
+.instructor-avatar { width: 76px; height: 76px; border-radius: 50%; border: 2.5px solid var(--cyan); overflow: hidden; flex-shrink: 0; background: var(--navy-deep); }
+.instructor-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.instructor-name { font-family: var(--font-display); font-weight: 700; font-size: 19px; }
+.instructor-role { color: var(--cyan); font-size: 13px; font-weight: 600; margin: 4px 0 8px; }
+.instructor-desc { color: #94a3b8; font-size: 13.5px; line-height: 1.55; }
+.collab-note { margin-top: 16px; padding-top: 16px; border-top: 1px dashed rgba(255,255,255,0.15); font-size: 13px; color: #94a3b8; }
+.collab-note strong { color: white; }
+
+/* ===== PILLARS ===== */
+.pillars { background: var(--cream); }
+.pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+@media (max-width: 900px) { .pillars-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .pillars-grid { grid-template-columns: 1fr; } }
+.pillar-card { background: white; border-radius: 12px; padding: 26px 22px; border: 1px solid #e5e0d5; }
+.pillar-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--navy); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.pillar-title { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--ink); margin-bottom: 6px; }
+.pillar-desc { font-size: 13.5px; color: var(--slate); line-height: 1.5; }
+
+/* Tools row */
+.tools-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 44px; }
+.tool-chip { background: white; border: 1px solid #e5e0d5; padding: 9px 16px; border-radius: 8px; font-size: 13.5px; font-weight: 600; color: var(--ink); }
+
+/* ===== OUTCOMES ===== */
+.outcomes { background: white; }
+.outcomes-list { list-style: none; margin-top: 32px; display: grid; gap: 14px; max-width: 640px; }
+.outcomes-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15.5px; color: var(--ink); }
+.outcomes-list li::before { content: "✓"; color: var(--cyan); font-weight: 700; background: rgba(82,208,255,0.12); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; }
+
+/* ===== CURRICULUM ===== */
+.curriculum { background: var(--navy); color: white; }
+.curriculum .section-title { color: white; }
+.curriculum .section-lead { color: #94a3b8; }
+.week-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+@media (max-width: 800px) { .week-cards { grid-template-columns: 1fr; } }
+.week-card { background: var(--navy-light); border-radius: 12px; padding: 22px; border: 1px solid rgba(255,255,255,0.08); }
+.week-tag { font-family: var(--font-mono); font-size: 11px; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+.week-title { font-family: var(--font-display); font-weight: 700; font-size: 16px; margin-bottom: 10px; }
+.week-topics { font-size: 13px; color: #94a3b8; line-height: 1.6; }
+.curriculum-cta { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.curriculum-note { font-size: 12.5px; color: #64748b; margin-top: 14px; max-width: 560px; }
+
+/* ===== GALLERY ===== */
+.gallery { background: var(--cream); }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 36px; }
+@media (max-width: 700px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+.gallery-item { aspect-ratio: 4/3; border-radius: 10px; background: linear-gradient(135deg, #e5e0d5, #d8d2c2); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-placeholder-text { font-family: var(--font-mono); font-size: 11px; color: #94a3b8; text-align: center; padding: 8px; }
+.gallery-caption { font-size: 12.5px; color: var(--slate); margin-top: 16px; font-style: italic; }
+
+/* ===== PRICING ===== */
+.pricing { background: white; }
+.pricing-card { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); border-radius: 18px; padding: 44px; color: white; margin-top: 40px; position: relative; overflow: hidden; }
+.pricing-card::before { content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(114,93,205,0.35), transparent 70%); }
+.pricing-badge { display: inline-block; background: rgba(255,102,196,0.15); border: 1px solid var(--gold); color: var(--gold); font-size: 11.5px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 18px; }
+.price-row { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+.price-old { font-size: 22px; color: #64748b; text-decoration: line-through; }
+.price-new { font-family: var(--font-display); font-size: 46px; font-weight: 700; color: var(--gold); }
+.price-note { color: #94a3b8; font-size: 14px; margin-bottom: 28px; max-width: 480px; line-height: 1.5; }
+.price-features { list-style: none; display: grid; gap: 10px; margin-bottom: 32px; }
+.price-features li { font-size: 14px; color: #e2e8f0; display: flex; gap: 10px; align-items: center; }
+.price-features li::before { content: "→"; color: var(--cyan); }
+.scarcity-line { display: inline-flex; align-items: center; gap: 8px; background: rgba(82,208,255,0.12); border: 1px solid rgba(82,208,255,0.35); color: var(--cyan); font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 8px; margin-bottom: 24px; }
+
+/* ===== FAQ ===== */
+.faq { background: var(--cream); }
+.faq-list { margin-top: 32px; max-width: 720px; }
+.faq-item { background: white; border: 1px solid #e5e0d5; border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
+.faq-q { padding: 16px 20px; font-weight: 600; font-size: 14.5px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-q .plus { font-size: 20px; color: var(--cyan); transition: transform 0.2s; }
+.faq-item.open .plus { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-a-inner { padding: 0 20px 18px; font-size: 13.5px; color: var(--slate); line-height: 1.6; }
+.faq-item.open .faq-a { max-height: 200px; }
+
+/* ===== FOOTER ===== */
+footer { background: var(--navy-deep); color: #64748b; padding: 44px 0 30px; }
+.footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-brand { display: flex; align-items: center; gap: 10px; color: white; font-family: var(--font-display); font-weight: 700; }
+.footer-brand img { width: 26px; height: 26px; }
+.footer-links { display: flex; gap: 20px; font-size: 13px; }
+.footer-links a:hover { color: var(--cyan); }
+.footer-bottom { margin-top: 26px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px; text-align: center; }
+
+/* ===== FLOATING WIDGETS ===== */
+.floating-widgets { position: fixed; bottom: 22px; right: 22px; z-index: 200; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+.fab { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.25); border: none; }
+.fab-whatsapp { background: #25D366; }
+.fab-chat { background: var(--navy); border: 2px solid var(--cyan); }
+
+/* Chat widget */
+.chat-panel { display: none; width: 320px; max-width: 85vw; background: white; border-radius: 14px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); overflow: hidden; margin-bottom: 8px; border: 1px solid #e2e8f0; }
+.chat-panel.open { display: block; }
+.chat-header { background: var(--navy); color: white; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; }
+.chat-header-title { font-size: 13.5px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.chat-header-title .dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; }
+.chat-close { background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 18px; }
+.chat-body { max-height: 320px; overflow-y: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.chat-msg { font-size: 13px; line-height: 1.5; padding: 10px 12px; border-radius: 10px; max-width: 88%; }
+.chat-msg.bot { background: #f1f5f9; color: var(--ink); align-self: flex-start; border-bottom-left-radius: 2px; }
+.chat-msg.user { background: var(--cyan); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+.chat-options { padding: 10px 16px 16px; display: flex; flex-direction: column; gap: 7px; border-top: 1px solid #f1f5f9; }
+.chat-option-btn { text-align: left; background: var(--cream); border: 1px solid #e5e0d5; border-radius: 8px; padding: 9px 12px; font-size: 12.5px; cursor: pointer; color: var(--ink); }
+.chat-option-btn:hover { border-color: var(--cyan); }
+
+/* Fade-in on scroll */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img src="assets/logo-full.png" alt="Twin Technologies" style="height:32px; width:auto;">
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+      <a href="application.html" class="nav-cta">Apply Now</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-eyebrow"><span class="dot"></span>Only 10 Seats · 100% Online</div>
+      <h1>Zero to <span>AI &amp; Freelance Hero</span> — in Just 3 Weeks</h1>
+      <p class="hero-sub">A live, hands-on cohort for anyone who wants to work faster with AI, automate the boring parts of their job, build a real app from a prompt, and start earning as a freelancer — no coding background required.</p>
+      <div class="hero-ctas">
+        <a href="application.html" class="btn-primary">Reserve Your Seat</a>
+        <a href="#curriculum" class="btn-secondary">View Curriculum</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">11+ years delivering for Google, Microsoft, Facebook</div>
+        <div class="hero-trust-item">Small groups of 5, live sessions</div>
+      </div>
+    </div>
+    <div>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
+          <span class="terminal-label">idea-to-app.prompt</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-prompt-line"><span class="arrow">›</span> <span class="terminal-typed" id="typedText"></span><span class="terminal-cursor" id="cursor"></span></div>
+          <div class="terminal-output" id="terminalOutput">
+            <div class="mock-browser">
+              <div class="mock-browser-bar"><span></span><span></span><span></span></div>
+              <div class="mock-browser-content">
+                <div class="mb-title">Amara's Bakery</div>
+                <div class="mb-sub">Fresh bread &amp; pastries, baked daily in Yola</div>
+                <span class="mb-btn">Order Now</span>
+              </div>
+            </div>
+            <div class="terminal-caption">// this is what you'll build in Week 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-eyebrow">Who This Is For</div>
+    <h2 class="section-title reveal">You don't need a "tech background." You need the right 3 weeks.</h2>
+    <p class="section-lead reveal">This cohort was built for people who feel behind on AI but aren't — they just haven't had someone show them, step by step, in plain language.</p>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p>Whether you're trying to <strong>work faster at your current job</strong>, <strong>start creating content</strong>, <strong>get better results out of AI tools</strong> for research or study, break into <strong>freelancing</strong>, or finally learn how people are <strong>building real apps and websites from a simple prompt</strong> — this cohort meets you where you are.</p>
+        <p>You'll leave with skills you actually use again the next day: the right AI tool for the right task, a working automation, a live app you built yourself, and a freelance profile ready to earn from.</p>
+        <p>Taught live, in small groups of 5, by someone who has spent 11+ years delivering real projects for Google, Microsoft, and Facebook — not just teaching theory.</p>
+      </div>
+      <div class="who-list reveal">
+        <div class="who-item"><span class="who-check">✓</span><span class="txt">Want to improve productivity at work using AI</span></div>
+        <div class="who-item"><span class="who-check">✓</span><span class="txt">Want to start content creation with AI tools</span></div>
+        <div class="who-item"><span class="who-check">✓</span><span class="txt">Want sharper prompting for better results, for work or study</span></div>
+        <div class="who-item"><span class="who-check">✓</span><span class="txt">In academia and want AI to actually help your research</span></div>
+        <div class="who-item"><span class="who-check">✓</span><span class="txt">Ready to enter the freelancing world and get paid for your skills</span></div>
+        <div class="who-item"><span class="who-check">✓</span><span class="txt">Curious how people build apps and websites without writing code</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="instructor-strip">
+  <div class="wrap">
+    <div class="section-eyebrow">Your Instructor</div>
+    <h2 class="section-title reveal" style="color:white;">Taught by someone who has actually shipped this work</h2>
+    <div class="instructor-card reveal">
+      <div class="instructor-avatar"><img src="assets/aliyu-headshot.png" alt="Abubakar Aliyu"></div>
+      <div>
+        <div class="instructor-name">Abubakar Aliyu</div>
+        <div class="instructor-role">Project Management &amp; Language Services</div>
+        <div class="instructor-desc">11+ years delivering projects for Google, Microsoft, Facebook and more. 600,000+ words coordinated across major language-service engagements, with a 98% quality accuracy track record.</div>
+        <div class="collab-note">In collaboration with <strong>Muhammad Djudo</strong> — American IT and trading specialist, trained 500+ students, multilingual in Fulfulde, English, French, Spanish, Zarma, and Arabic.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="section-eyebrow">What You'll Master</div>
+    <h2 class="section-title reveal">Four skills, one cohort</h2>
+    <p class="section-lead reveal">Not four separate courses — one connected path, each skill building on the last.</p>
+    <div class="pillars-grid">
+      <div class="pillar-card reveal">
+        <div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5L12 2z"/></svg></div>
+        <div class="pillar-title">AI Mastery</div>
+        <div class="pillar-desc">ChatGPT, Gemini, Claude — know which tool fits which task, and how to prompt each one for accurate results.</div>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+        <div class="pillar-title">Automation</div>
+        <div class="pillar-desc">Chain AI tools together to handle repetitive tasks automatically — no coding required.</div>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="pillar-title">Idea to App</div>
+        <div class="pillar-desc">Turn a plain-language prompt into a live website or app preview, no coding background needed.</div>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <div class="pillar-title">Freelancing</div>
+        <div class="pillar-desc">Real marketplace categories, going rates, and a plan to land your first 2 paying clients.</div>
+      </div>
+    </div>
+    <div class="tools-row reveal">
+      <span class="tool-chip">ChatGPT</span>
+      <span class="tool-chip">Gemini</span>
+      <span class="tool-chip">Claude</span>
+      <span class="tool-chip">Canva</span>
+      <span class="tool-chip">Google Workspace</span>
+      <span class="tool-chip">Automation</span>
+      <span class="tool-chip">Replit / Lovable</span>
+    </div>
+  </div>
+</section>
+
+<section class="outcomes">
+  <div class="wrap">
+    <div class="section-eyebrow">By Graduation</div>
+    <h2 class="section-title reveal">What you'll actually walk away with</h2>
+    <ul class="outcomes-list reveal">
+      <li>At least 5 practical, monetizable skills.</li>
+      <li>Know exactly which AI tool fits which task — and how to automate the repetitive ones.</li>
+      <li>Complete profiles on 2 major freelance platforms.</li>
+      <li>A plan to land your first 2 paying clients.</li>
+      <li>A live app or website preview you built yourself, from a prompt.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="curriculum" id="curriculum">
+  <div class="wrap">
+    <div class="section-eyebrow" style="color:#94a3b8;">3 Weeks · 9 Sessions</div>
+    <h2 class="section-title reveal">The Curriculum</h2>
+    <p class="section-lead reveal">3 live sessions a week, 2 hours each. Flexible enough for beginners, focused enough to finish with something real.</p>
+    <div class="week-cards">
+      <div class="week-card reveal">
+        <div class="week-tag">Week 1</div>
+        <div class="week-title">AI Foundations &amp; Freelancing Groundwork</div>
+        <div class="week-topics">Understanding AI vs. LLMs vs. AI agents · Prompting that actually works · The freelance landscape and where your skills fit</div>
+      </div>
+      <div class="week-card reveal">
+        <div class="week-tag">Week 2</div>
+        <div class="week-title">Freelancing in Practice &amp; Automation</div>
+        <div class="week-topics">Building a profile that gets noticed · Automation for everyday work · Client outreach and landing your first clients</div>
+      </div>
+      <div class="week-card reveal">
+        <div class="week-tag">Week 3</div>
+        <div class="week-title">Idea to App/Website</div>
+        <div class="week-topics">From idea to interface · Turning a prompt into a live preview · Final presentations &amp; graduation</div>
+      </div>
+    </div>
+    <div class="curriculum-cta reveal">
+      <a href="assets/curriculum.pdf" class="btn-primary" download>Download Full Curriculum</a>
+      <a href="assets/curriculum.pdf" class="btn-secondary" target="_blank">View Online</a>
+    </div>
+    <p class="curriculum-note">Week 3 covers going from a prompt to a live preview on tools like Replit and Lovable. Full deployment — buying a domain, hosting, and taking a site fully live — is covered in a separate advanced class for students ready to go further.</p>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-eyebrow">In The Room</div>
+    <h2 class="section-title reveal">Abubakar teaching in past sessions</h2>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><div class="gallery-placeholder-text">Photo coming soon</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder-text">Photo coming soon</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder-text">Photo coming soon</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder-text">Photo coming soon</div></div>
+    </div>
+    <p class="gallery-caption">This cohort runs fully online — these photos are from past in-person sessions.</p>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Enrollment</div>
+    <h2 class="section-title reveal">Reserve one of 10 seats</h2>
+    <div class="pricing-card reveal">
+      <div class="pricing-badge">Early Bird</div>
+      <div class="price-row">
+        <span class="price-old">₦150,000</span>
+        <span class="price-new">₦95,000</span>
+      </div>
+      <p class="price-note">₦10,000 deposit at application — your proof of commitment, non-refundable, and fully credited toward your ₦95,000 total (balance ₦85,000 due at registration).</p>
+      <ul class="price-features">
+        <li>3 weeks, 9 live sessions, small group of 5</li>
+        <li>Full curriculum: AI mastery, automation, idea-to-app, freelancing</li>
+        <li>Certificate on completion</li>
+      </ul>
+      <div class="scarcity-line">⚡ 10 seats only — applications close once full</div>
+      <div>
+        <a href="application.html" class="btn-primary">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-eyebrow">Questions</div>
+    <h2 class="section-title reveal">Frequently Asked Questions</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q">Do I need any coding or tech experience? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">No. This cohort starts from zero. Everything is taught in plain language, with live, hands-on practice each session.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How are classes delivered? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Fully online, live, via video call — 3 sessions a week, 2 hours each, over 3 weeks. Recordings are available if you miss a session.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does the ₦10,000 deposit cover? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">It's not an extra fee — it's the first part of your ₦95,000 total, and it reserves your seat. It's non-refundable, since it's your proof of commitment for a small-group cohort.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will I actually build a real app? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes — in Week 3, you'll turn a real prompt into a live app/website preview. Taking it fully live with your own domain is covered in a separate advanced class.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I apply? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Tap "Apply Now," fill in your details, pay the ₦10,000 deposit, and enter your bank reference number. You'll get confirmation once it's verified.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-full.png" alt="Twin Technologies" style="height:24px; width:auto;">
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="application.html">Apply</a>
+        <a href="https://wa.me/2349034346393" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">Twin AB Technologies · Zero to AI &amp; Freelance Hero · +234 903 434 6393</div>
+  </div>
+</footer>
+
+<div class="floating-widgets">
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <div class="chat-header-title"><span class="dot"></span>Course Assistant</div>
+      <button class="chat-close" onclick="toggleChat(false)">×</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-msg bot">Hi! I can answer quick questions about the cohort. Pick one below 👇</div>
+    </div>
+    <div class="chat-options" id="chatOptions"></div>
+  </div>
+  <div style="display:flex; gap:12px;">
+    <button class="fab fab-chat" onclick="toggleChat()" aria-label="Chat with course assistant">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#52d0ff" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+    </button>
+    <a class="fab fab-whatsapp" href="https://wa.me/2349034346393" target="_blank" aria-label="Chat on WhatsApp">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35a9.9 9.9 0 004.62 1.15h.01c5.46 0 9.9-4.45 9.9-9.9C21.95 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 01-1.26-4.29c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.85 5.8 2.4a8.14 8.14 0 012.4 5.8c0 4.52-3.68 8.15-8.15 8.15zm4.5-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23a7.5 7.5 0 01-1.38-1.72c-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.16 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.11-.23-.17-.48-.29z"/></svg>
+    </a>
+  </div>
+</div>
+
+<script>
+// Typing animation
+const promptText = "Build me a bakery website with an ordering button";
+const typedEl = document.getElementById('typedText');
+const cursorEl = document.getElementById('cursor');
+const outputEl = document.getElementById('terminalOutput');
+let i = 0;
+function typeChar() {
+  if (i < promptText.length) {
+    typedEl.textContent += promptText.charAt(i);
+    i++;
+    setTimeout(typeChar, 42);
+  } else {
+    setTimeout(() => {
+      cursorEl.style.display = 'none';
+      outputEl.classList.add('show');
+    }, 500);
+  }
+}
+setTimeout(typeChar, 700);
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    q.parentElement.classList.toggle('open');
+  });
+});
+
+// Chat widget (FAQ-style, no API)
+const chatFAQ = [
+  { q: "Do I need coding experience?", a: "No. This cohort starts from zero — everything is taught in plain language with hands-on practice." },
+  { q: "How much does it cost?", a: "₦95,000 total. A ₦10,000 deposit reserves your seat and is credited toward that total — balance ₦85,000 due at registration." },
+  { q: "How do classes work?", a: "Fully online, live, 3 sessions a week (2 hours each) over 3 weeks. Recordings are provided if you miss a session." },
+  { q: "How do I apply?", a: "Tap 'Apply Now' on this page, fill in your details, and submit your deposit reference number." },
+  { q: "I have another question", a: "No problem — tap the WhatsApp button and message Abubakar directly at +234 903 434 6393." }
+];
+const chatBody = document.getElementById('chatBody');
+const chatOptions = document.getElementById('chatOptions');
+function renderChatOptions() {
+  chatOptions.innerHTML = '';
+  chatFAQ.forEach(item => {
+    const btn = document.createElement('button');
+    btn.className = 'chat-option-btn';
+    btn.textContent = item.q;
+    btn.onclick = () => {
+      const userMsg = document.createElement('div');
+      userMsg.className = 'chat-msg user';
+      userMsg.textContent = item.q;
+      chatBody.appendChild(userMsg);
+      const botMsg = document.createElement('div');
+      botMsg.className = 'chat-msg bot';
+      botMsg.textContent = item.a;
+      chatBody.appendChild(botMsg);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    };
+    chatOptions.appendChild(btn);
+  });
+}
+renderChatOptions();
+function toggleChat(force) {
+  const panel = document.getElementById('chatPanel');
+  if (typeof force === 'boolean') {
+    panel.classList.toggle('open', force);
+  } else {
+    panel.classList.toggle('open');
+  }
+}
+</script>
+
+</body>
+</html>
