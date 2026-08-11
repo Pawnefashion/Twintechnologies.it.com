@@ -9,7 +9,7 @@
 <style>
 :root {
   --navy-deep: #0c0a14; --navy: #171325; --navy-light: #241f38;
-  --cyan: #52d0ff; --gold: #ff66c4; --indigo: #4856c1; --purple: #725dcd;
+  --cyan: #4fd1e8; --gold: #6366f1; --indigo: #6366f1; --purple: #6366f1;
   --cream: #f7f4ee; --ink: #0f172a; --slate: #64748b;
   --font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif;
 }
@@ -27,7 +27,7 @@ nav .back { margin-left: auto; color: #94a3b8; font-size: 13px; }
 .hero-avatar { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; margin: 0 auto 14px; border: 2.5px solid var(--cyan); }
 .hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .hero h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-.hero h1 span { background: linear-gradient(120deg, var(--cyan), var(--purple), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero h1 span { color: var(--cyan); }
 .hero p { font-size: 13px; color: #94a3b8; }
 
 .form-section { padding: 28px 24px; }
@@ -44,7 +44,7 @@ textarea { resize: vertical; min-height: 70px; }
 .radio-option input { width: auto; margin-right: 6px; }
 
 .section-divider { border-top: 2px dashed #e2e8f0; margin: 28px 0; padding-top: 24px; }
-.section-label { font-size: 13px; font-weight: 800; background: linear-gradient(120deg, var(--purple), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
+.section-label { font-size: 13px; font-weight: 800; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
 
 .payment-box { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
 .payment-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 13.5px; }
@@ -58,7 +58,7 @@ textarea { resize: vertical; min-height: 70px; }
 .amount-highlight .lbl { font-size: 11px; color: var(--purple); font-weight: 700; text-transform: uppercase; }
 
 .submit-btn {
-  width: 100%; background: linear-gradient(120deg, var(--indigo), var(--purple) 55%, var(--gold)); color: white; border: none; padding: 16px;
+  width: 100%; background: var(--indigo); color: white; border: none; padding: 16px;
   border-radius: 10px; font-weight: 800; font-size: 15px; cursor: pointer;
   box-shadow: 0 8px 24px rgba(114,93,205,0.35);
 }
@@ -169,7 +169,7 @@ textarea { resize: vertical; min-height: 70px; }
 
 <script>
 // Replace GOOGLE_SCRIPT_URL with your Apps Script Web App URL once deployed.
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz6Gj-a2g1wHAgtWU5SIhla2MdP1hAzGMZdyrOP60o3WVA1COiBzIUM2Sg_Hih8NfqG/exec";
+const GOOGLE_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
 
 document.getElementById('regForm').addEventListener('submit', function(e) {
   e.preventDefault();
