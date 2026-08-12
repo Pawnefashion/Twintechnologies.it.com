@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply — Zero to AI & Freelance Hero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy-deep: #0c0a14; --navy: #171325; --navy-light: #241f38;
+  --cyan: #4fd1e8; --gold: #6366f1; --indigo: #6366f1; --purple: #6366f1;
+  --cream: #f7f4ee; --ink: #0f172a; --slate: #64748b;
+  --font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-body); }
+body { background: var(--cream); display: flex; justify-content: center; }
+h1, h2 { font-family: var(--font-display); }
+a { color: inherit; text-decoration: none; }
+.wrap { width: 100%; max-width: 580px; }
+
+nav { background: var(--navy-deep); padding: 14px 24px; display: flex; align-items: center; }
+nav img { height: 28px; width: auto; }
+nav .back { margin-left: auto; color: #94a3b8; font-size: 13px; }
+
+.hero { background: linear-gradient(165deg, var(--navy) 0%, var(--navy-deep) 100%); color: white; padding: 36px 24px; text-align: center; }
+.hero-avatar { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; margin: 0 auto 14px; border: 2.5px solid var(--cyan); }
+.hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.hero h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.hero h1 span { color: var(--cyan); }
+.hero p { font-size: 13px; color: #94a3b8; }
+
+.form-section { padding: 28px 24px; }
+.field-group { margin-bottom: 20px; }
+label { display: block; font-size: 12.5px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+input, select, textarea {
+  width: 100%; padding: 12px 14px; border-radius: 8px; border: 1.5px solid #e2e8f0;
+  font-size: 14px; background: white; color: var(--ink); font-family: var(--font-body);
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--cyan); }
+textarea { resize: vertical; min-height: 70px; }
+.radio-row { display: flex; gap: 12px; }
+.radio-option { flex: 1; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 10px; text-align: center; font-size: 13px; cursor: pointer; }
+.radio-option input { width: auto; margin-right: 6px; }
+
+.section-divider { border-top: 2px dashed #e2e8f0; margin: 28px 0; padding-top: 24px; }
+.section-label { font-size: 13px; font-weight: 800; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
+
+.payment-box { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+.payment-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 13.5px; }
+.payment-row:last-child { border-bottom: none; }
+.payment-row .label-sm { color: var(--slate); }
+.payment-row .val { font-weight: 700; color: var(--ink); }
+.payment-note { font-size: 11.5px; color: var(--slate); margin-top: 12px; line-height: 1.5; font-style: italic; }
+
+.amount-highlight { background: linear-gradient(120deg, rgba(114,93,205,0.1), rgba(255,102,196,0.1)); border: 1px solid var(--purple); border-radius: 8px; padding: 14px; text-align: center; margin-bottom: 20px; }
+.amount-highlight .amt { font-size: 26px; font-weight: 800; color: var(--purple); font-family: var(--font-display); }
+.amount-highlight .lbl { font-size: 11px; color: var(--purple); font-weight: 700; text-transform: uppercase; }
+
+.submit-btn {
+  width: 100%; background: var(--indigo); color: white; border: none; padding: 16px;
+  border-radius: 10px; font-weight: 800; font-size: 15px; cursor: pointer;
+  box-shadow: 0 8px 24px rgba(114,93,205,0.35);
+}
+.submit-btn:disabled { background: #cbd5e1; color: #64748b; cursor: not-allowed; box-shadow: none; }
+.helper-text { font-size: 11px; color: var(--slate); text-align: center; margin-top: 10px; }
+
+.footer { background: var(--navy-deep); color: #94a3b8; padding: 20px 24px; font-size: 11.5px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <img src="assets/logo-full.png" alt="Twin Technologies">
+    <a href="index.html" class="back">← Back to site</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-avatar"><img src="assets/aliyu-headshot.png" alt="Abubakar Aliyu"></div>
+    <h1>Zero to <span>AI & Freelance Hero</span></h1>
+    <p>3-Week Online Cohort — Registration</p>
+  </div>
+
+  <form class="form-section" id="regForm">
+    <div class="field-group">
+      <label>Full Name *</label>
+      <input type="text" name="fullName" required>
+    </div>
+    <div class="field-group">
+      <label>Email Address *</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="field-group">
+      <label>WhatsApp Number *</label>
+      <input type="tel" name="whatsapp" placeholder="+234..." required>
+    </div>
+    <div class="field-group">
+      <label>State / City *</label>
+      <input type="text" name="location" required>
+    </div>
+    <div class="field-group">
+      <label>Current Occupation *</label>
+      <input type="text" name="occupation" required>
+    </div>
+    <div class="field-group">
+      <label>Have you used any AI tools before? *</label>
+      <div class="radio-row">
+        <label class="radio-option"><input type="radio" name="aiExperience" value="Yes" required> Yes</label>
+        <label class="radio-option"><input type="radio" name="aiExperience" value="No"> No</label>
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Why do you want to join this cohort? *</label>
+      <textarea name="motivation" required></textarea>
+    </div>
+    <div class="field-group">
+      <label>Choose Your Class Group *</label>
+      <select name="groupSlot" required>
+        <option value="">Select a group</option>
+        <option value="Group A">Group A — Sat 10-12, Sun 10-12, Wed 5-7pm</option>
+        <option value="Group B">Group B — Sat 4-6, Sun 4-6, Wed 7-9pm</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <label>How did you hear about us? *</label>
+      <select name="source" required>
+        <option value="">Select one</option>
+        <option>Flyer</option>
+        <option>WhatsApp</option>
+        <option>Instagram</option>
+        <option>Facebook</option>
+        <option>LinkedIn</option>
+        <option>Friend/Referral</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="section-divider">
+      <div class="section-label">💳 Payment</div>
+
+      <div class="amount-highlight">
+        <div class="amt">₦10,000</div>
+        <div class="lbl">Deposit due now — reserves your seat</div>
+      </div>
+
+      <div class="payment-box">
+        <div class="payment-row"><span class="label-sm">Account Name</span><span class="val">Abubakar Aliyu</span></div>
+        <div class="payment-row"><span class="label-sm">Account Number</span><span class="val">2262029540</span></div>
+        <div class="payment-row"><span class="label-sm">Bank</span><span class="val">Zenith Bank</span></div>
+        <div class="payment-note">Transfer ₦10,000 to the account above, then enter your bank's transaction reference number below. This deposit is non-refundable and is credited toward your total ₦95,000 (balance ₦85,000 due at registration).</div>
+      </div>
+
+      <div class="field-group">
+        <label>Bank Transaction Reference Number *</label>
+        <input type="text" name="bankRef" placeholder="e.g. from your bank app after transfer" required>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
+    <div class="helper-text">We'll verify your payment and confirm your seat within 24 hours.</div>
+  </form>
+
+  <div class="footer">
+    Questions? WhatsApp +234 903 434 6393 · abubakaraliyu4u@yahoo.com
+  </div>
+
+</div>
+
+<script>
+// Replace GOOGLE_SCRIPT_URL with your Apps Script Web App URL once deployed.
+https://script.google.com/macros/s/AKfycbyF4asni98Ru1T1d_D6mfjVd04jbEzze8F-gpDcjpwLu5R_xUXAKGU31h2o_AH7MpS3/exec
+
+document.getElementById('regForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData.entries());
+
+  if (GOOGLE_SCRIPT_URL.includes("PASTE_YOUR")) {
+    alert('Form is not yet connected to Google Sheets. See setup guide to add your Apps Script URL.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Submitting...";
+
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    document.querySelector('.form-section').innerHTML =
+      '<div style="text-align:center; padding:40px 0;"><h2 style="font-size:20px; margin-bottom:10px;">Application received 🎉</h2><p style="color:#64748b; font-size:14px; line-height:1.6;">We will verify your payment and confirm your seat within 24 hours via WhatsApp or email. Keep your reference number for your records.</p></div>';
+  })
+  .catch(() => {
+    alert('Something went wrong submitting your application. Please try again or contact us on WhatsApp.');
+    btn.disabled = false;
+    btn.textContent = "Submit Application";
+  });
+});
+</script>
+
+</body>
+</html>
